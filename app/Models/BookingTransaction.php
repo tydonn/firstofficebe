@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BookingTransaction extends Model
 {
     //
-    use Hasfactory, softDeletes;
+    use HasFactory, SoftDeletes;
     protected $fillable = [
         'name',
         'phone_number',
@@ -23,7 +23,7 @@ class BookingTransaction extends Model
         'office_space_id',
     ];
 
-    public static function generateUnixTrxId()
+    public static function generateUniqueTrxId()
     {
         $prefix = 'FO';
         do {
