@@ -47,4 +47,9 @@ class OfficeSpace extends Model
     {
         return $this->belongsTo(City::class);
     }
+
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(BookingTransaction::class);
+    }
 }
